@@ -21,12 +21,10 @@
             overflow-x: hidden;
         }
         
-        /* LOCK SCROLL SAAT COVER AKTIF */
         body.cover-active {
             overflow: hidden;
         }
 
-        /* FITUR 1: HALAMAN SAMPUL DEPAN INTERAKTIF (COVER LAYER) */
         #cover-layer {
             position: fixed;
             top: 0;
@@ -47,17 +45,15 @@
             transform: translateY(-100vh);
         }
 
-        /* 1. FOTO BACKGROUND UTAMA (MENGGUNAKAN FOTO DRIVE 1 ANDA) */
         body { 
             font-family: 'Montserrat', sans-serif; 
             background: linear-gradient(rgba(252, 251, 247, 0.78), rgba(252, 251, 247, 0.78)), 
                         url('https://lh3.googleusercontent.com/u/0/d/1_BWBy6LvbA44jllcs7bqaLdP3-vrWuSv') no-repeat center center fixed;
             background-size: cover;
             color: #2b2b2b; 
-            padding-bottom: 70px; /* Spasi untuk Navigasi Pintar di bawah */
+            padding-bottom: 70px;
         }
         
-        /* 2. FOTO BACKGROUND HALAMAN DEPAN / HERO (MENGGUNAKAN FOTO DRIVE 2 ANDA) */
         .hero { 
             background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
                         url('https://lh3.googleusercontent.com/u/0/d/1Zh7V2Ev0oGgPZarbIXVAzyEnmWJHtPrn') no-repeat center center/cover; 
@@ -72,7 +68,6 @@
         .romantic-font { font-family: 'Great Vibes', cursive; font-size: 4.8rem; color: #d4af37; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
         .section-padding { padding: 90px 0; }
         
-        /* GAYA ARABIK MANDIRI AMAN TANPA GAMBAR PECAH */
         .arabic-text {
             font-size: 2.3rem;
             line-height: 3.8rem;
@@ -82,20 +77,16 @@
             color: #333;
         }
 
-        /* TOMBOL ELEGAN DENGAN EFEK TRANSISI EMAS */
         .btn-custom { background-color: #c5a880; color: white; border: none; padding: 12px 30px; border-radius: 30px; transition: 0.4s ease; text-decoration: none; display: inline-block; font-weight: 500; box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3); }
         .btn-custom:hover { background-color: #d4af37; color: white; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); }
         
-        /* KOTAK COUNTDOWN ELEGAN */
         .countdown-box { background: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; min-width: 85px; color: #2b2b2b; transition: 0.3s; }
         .countdown-box:hover { transform: translateY(-5px); }
         .countdown-box span { font-size: 2.2rem; font-weight: 600; display: block; color: #d4af37; }
         
-        /* TOMBOL PENGATUR MUSIK ELEGAN */
         .audio-control { position: fixed; bottom: 90px; right: 20px; z-index: 999; background: #d4af37; color: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.25); transition: 0.3s; }
         .audio-control:hover { transform: scale(1.1); }
         
-        /* EFEK LAPISAN KACA PREMIUM (GLASSMORPHISM) */
         .glass-panel { 
             background: rgba(255, 255, 255, 0.82) !important; 
             backdrop-filter: blur(12px) !important; 
@@ -106,7 +97,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
         }
         
-        /* EFEK PARALLAX SCROLLING PADA FOTO MEMPELAI */
+        /* FIX PARALLAX HALUS PADA FOTO PROFIL MEMPELAI */
         .parallax-wrap {
             width: 190px;
             height: 190px;
@@ -119,15 +110,15 @@
         }
         .parallax-img {
             width: 100%;
-            height: 140%; /* Lebih tinggi agar ada ruang gerak parallax */
+            height: 115%; /* Sedikit lebih tinggi untuk rentang gerak mikro */
             object-fit: cover;
             position: absolute;
-            top: -20%;
+            top: -7%; 
             left: 0;
-            transition: transform 0.1s ease-out;
+            will-change: transform;
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* GAYA TIMELINE KISAH CINTA ELEGAN DENGAN ALBUM GALERI */
         .timeline { position: relative; max-width: 800px; margin: 0 auto; padding: 20px 0; }
         .timeline::after { content: ''; position: absolute; width: 2px; background-color: #d4af37; top: 0; bottom: 0; left: 50%; margin-left: -1px; }
         .timeline-container { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
@@ -140,12 +131,10 @@
         .timeline-content:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
         .timeline-gallery-img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px; border: 2px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         
-        /* ALBUM FOTO PREWEDDING EFEK HOVER ZOOM PENGANTIN */
         .gallery-img { width: 100%; height: 260px; object-fit: cover; transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
         .gallery-box { overflow: hidden; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); border: 3px solid rgba(255, 255, 255, 0.8); }
         .gallery-box:hover .gallery-img { transform: scale(1.08); }
 
-        /* KELOPAK BUNGA JATUH ANIMASI CSS */
         .petals-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 99; overflow: hidden; }
         .petal { position: absolute; background: #f8c8d8; border-radius: 150% 0 150% 150%; opacity: 0.6; animation: floatPetal linear infinite; }
         @keyframes floatPetal {
@@ -154,7 +143,6 @@
             100% { transform: translateY(105vh) translateX(100px) rotate(360deg); opacity: 0; }
         }
 
-        /* FITUR 3: TOMBOL NAVIGASI PINTAR (STICKY NAVIGATION MENU) */
         .sticky-nav {
             position: fixed;
             bottom: 0;
@@ -187,7 +175,6 @@
             color: #d4af37;
         }
 
-        /* FITUR 4: DEKORASI BUKU TAMU DIGITAL */
         .guestbook-list {
             max-height: 350px;
             overflow-y: auto;
@@ -203,10 +190,9 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
-        /* WADAH VIDEO EMBED RESPONSIVE */
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: 12px;
@@ -235,7 +221,7 @@
 </head>
 <body class="cover-active">
 
-    <!-- FITUR 1 & 2: LAYOUT HALAMAN SAMPUL DEPAN INTERAKTIF & PERSONALIZED NAMA TAMU -->
+    <!-- FITUR 1 & 2: COVER LAYER & PERSONALIZED NAMA TAMU -->
     <div id="cover-layer">
         <div class="container p-4">
             <h5 class="text-uppercase tracking-wide mb-2" style="letter-spacing: 4px;">Walimatul 'Ursy</h5>
@@ -243,7 +229,6 @@
             
             <div class="my-5 glass-panel mx-auto py-3 text-dark" style="max-width: 450px; background: rgba(255,255,255,0.85) !important;">
                 <p class="mb-1 text-muted small">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                <!-- Target cetak nama kustom dari URL -->
                 <h4 class="fw-bold mb-0" id="guest-target" style="color:#2b2b2b;">Tamu Undangan</h4>
             </div>
             
@@ -285,21 +270,19 @@
             <i class="fas fa-heart fa-2x mb-4" style="color: #d4af37;"></i>
             <h3 class="fw-bold mb-4" style="font-size: 1.3rem; letter-spacing: 2px; color: #c5a880;">QS. AR-RUM: 21</h3>
             
-            <!-- Menggunakan Tulisan Kode Arab Aman Bermesin Responsif Lokal HP -->
             <p class="arabic-text my-4 px-3 text-center">
                 وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
             </p>
             
             <hr class="mx-auto my-4" style="width: 80px; border-top: 2px solid #d4af37;">
             
-            <!-- Arti Terjemahan -->
             <p class="fst-italic text-muted px-3 lh-lg small">
                 "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir."
             </p>
         </div>
     </section>
 
-    <!-- 2. Profil Mempelai (DENGAN INTEGRASI EFEK PARALLAX SCROLLING) -->
+    <!-- 2. Profil Mempelai (DENGAN REVISI PARALLAX MIKRO SUPER HALUS) -->
     <section class="section-padding text-center container" id="mempelai">
         <div class="glass-panel mx-auto" style="max-width: 950px;" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="romantic-font mb-5" style="font-size: 3.5rem;">Mempelai Bersanding</h2>
@@ -348,52 +331,51 @@
         </div>
     </section>
 
-    <!-- BARU - HALAMAN KHUSUS: GALERI KILAS BALIK VIDEO EMBED -->
+    <!-- REVISI: HALAMAN GALERI KILAS BALIK DENGAN LINK DRIVE ANDA -->
     <section class="section-padding text-center container">
         <div class="glass-panel mx-auto" style="max-width: 850px;" data-aos="fade-up">
             <h2 class="romantic-font mb-4" style="font-size: 3.5rem;">Kilas Balik Video</h2>
             <p class="text-muted mb-4">Simak rangkuman momen sinematik kebersamaan hari bahagia kami</p>
-            <!-- Wadah video interaktif (Ganti bagian URL src dengan link video YouTube/TikTok/Drive Anda sendiri) -->
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://drive.google.com/file/d/1v6iq-1AHEBVfsvyEUxOGw3b4AhHLiWld/preview" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <!-- 3. Kisah Cinta (Love Journey Berbentuk Galeri Visual) -->
+    <!-- 3. Kisah Cinta (REVISI NARASI & TAHUN ROMANTIS) -->
     <section class="section-padding container" id="cerita">
         <div class="glass-panel mx-auto" style="max-width: 950px;" data-aos="fade-up">
             <div class="text-center mb-5">
                 <h2 class="romantic-font" style="font-size: 3.5rem;">Kisah Cinta Kami</h2>
-                <p class="text-muted">Bagaimana perjalanan cinta kami bermula hingga bersanding di pelaminan</p>
+                <p class="text-muted">Setiap detik berharga, mengantarkan kami menuju gerbang pelaminan</p>
             </div>
             <div class="timeline">
                 <div class="timeline-container left" data-aos="fade-right">
                     <div class="timeline-content">
                         <img src="https://lh3.googleusercontent.com/u/0/d/1_BWBy6LvbA44jllcs7bqaLdP3-vrWuSv" class="timeline-gallery-img" alt="Pertama Bertemu">
-                        <h4 class="h6 fw-bold" style="color: #d4af37;">Pertama Bertemu (2023)</h4>
-                        <p class="mb-0 text-muted small">Awal mula takdir mempertemukan kami di sebuah acara. Pandangan pertama yang menjadi awal diskusi panjang dan kedekatan kami.</p>
+                        <h4 class="h6 fw-bold" style="color: #d4af37;">Awal Pertemuan (2021)</h4>
+                        <p class="mb-0 text-muted small">Takdir tulus mempertemukan tatapan kami untuk pertama kali. Diskusi hangat dan kecocokan hati menjadi benih awal dari rasa kagum yang tumbuh perlahan.</p>
                     </div>
                 </div>
                 <div class="timeline-container right" data-aos="fade-left">
                     <div class="timeline-content">
                         <img src="https://lh3.googleusercontent.com/u/0/d/1Zh7V2Ev0oGgPZarbIXVAzyEnmWJHtPrn" class="timeline-gallery-img" alt="Menjalin Komitmen">
-                        <h4 class="h6 fw-bold" style="color: #d4af37;">Menjalin Komitmen (2024)</h4>
-                        <p class="mb-0 text-muted small">Setelah saling mengenal lebih dalam, kami memutuskan untuk berkomitmen serius dan saling mendukung impian satu sama lain.</p>
+                        <h4 class="h6 fw-bold" style="color: #d4af37;">Menjalin Komitmen (2022)</h4>
+                        <p class="mb-0 text-muted small">Kami memantapkan hati memilih satu sama lain. Sebuah ikatan komitmen tulus diikrarkan untuk saling menjaga, melengkapi, dan meraih impian bersama.</p>
                     </div>
                 </div>
                 <div class="timeline-container left" data-aos="fade-right">
                     <div class="timeline-content">
                         <img src="https://lh3.googleusercontent.com/u/0/d/1iNdTKBzkdgmp7VJD64SkSFduQyZWP_Hs" class="timeline-gallery-img" alt="Hari Lamaran">
-                        <h4 class="h6 fw-bold" style="color: #d4af37;">Hari Lamaran (Early 2026)</h4>
-                        <p class="mb-0 text-muted small">Di hadapan kedua keluarga besar, kami mengikat janji suci secara resmi dalam acara lamaran penuh haru dan bahagia.</p>
+                        <h4 class="h6 fw-bold" style="color: #d4af37;">Ikatan Lamaran (2025)</h4>
+                        <p class="mb-0 text-muted small">Di hadapan restu kedua keluarga besar, kami menyatukan niat suci dalam prosesi lamaran yang khidmat penuh haru serta untaian kebahagiaan mendalam.</p>
                     </div>
                 </div>
                 <div class="timeline-container right" data-aos="fade-left">
                     <div class="timeline-content">
                         <img src="https://lh3.googleusercontent.com/u/0/d/1Zh7V2Ev0oGgPZarbIXVAzyEnmWJHtPrn" class="timeline-gallery-img" alt="Menikah">
-                        <h4 class="h6 fw-bold" style="color: #d4af37;">Menikah (Desember 2026)</h4>
-                        <p class="mb-0 text-muted small">Hari baru dan lembaran baru kehidupan kami dimulai. Kami mengikrarkan janji setia seumur hidup dalam ikatan pernikahan.</p>
+                        <h4 class="h6 fw-bold" style="color: #d4af37;">Gerbang Pernikahan (2026)</h4>
+                        <p class="mb-0 text-muted small">Lembaran ibadah terindah dan pengabdian hidup baru dimulai. Kami mengikrarkan janji setia sehidup sesurga dalam ikatan akad pernikahan suci.</p>
                     </div>
                 </div>
             </div>
@@ -425,7 +407,6 @@
                 </div>
             </div>
 
-            <!-- FITUR TOMBOL SIMPAN TANGGAL (ADD TO CALENDAR) -->
             <div class="mt-4" data-aos="fade-up">
                 <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Ruslan+%26+Nuraeni&dates=20261226T010000Z/20261226T070000Z&details=Selamat+datang+di+pernikahan+Ruslan+and+Nuraeni.+Mohon+doa+restu+Anda.&location=Klinik+Aqma+Purwakarta,+Jawa+Barat" 
                    target="_blank" class="btn btn-custom">
@@ -442,7 +423,7 @@
         </div>
     </section>
 
-      <!-- 5. Fitur Amplop Digital / Wedding Gift -->
+    <!-- 5. Fitur Amplop Digital / Wedding Gift -->
     <section class="section-padding text-center container">
         <div class="glass-panel mx-auto" style="max-width: 950px;" data-aos="fade-up">
             <h2 class="romantic-font mb-4" style="font-size: 3.5rem;">Dompet Digital / Kado Digital</h2>
@@ -492,7 +473,7 @@
         </div>
     </section>
 
-    <!-- FITUR 4: BUKU TAMU DIGITAL (UCAPAN & DOA RESTU REAL-TIME) -->
+    <!-- UCAPAN & DOA RESTU REAL-TIME -->
     <section class="section-padding text-center container" style="max-width: 700px;" data-aos="fade-up" id="ucapan">
         <div class="glass-panel">
             <h2 class="romantic-font mb-4" style="font-size: 3.5rem;">Buku Tamu Digital</h2>
@@ -506,7 +487,6 @@
             </div>
             <button type="button" class="btn btn-custom w-100 py-2 mb-4" style="border-radius:8px;" onclick="addWish()">Kirim Ucapan</button>
 
-            <!-- Wadah List Ucapan Tamu -->
             <div class="guestbook-list" id="wishes-container">
                 <div class="guestbook-card">
                     <h6 class="fw-bold mb-1" style="color: #c5a880;">Keluarga Besar Budi Santoso</h6>
@@ -525,7 +505,7 @@
         <p class="mb-0 small">&copy; 2026 Ruslan & Nuraeni. All Rights Reserved.</p>
     </footer>
 
-    <!-- FITUR 3: LAYOUT TOMBOL NAVIGASI PINTAR (STICKY NAVIGATION MENU) -->
+    <!-- FITUR 3: STICKY NAVIGATION MENU -->
     <div class="sticky-nav">
         <a href="#home" class="nav-item-custom"><i class="fas fa-home"></i><span>Home</span></a>
         <a href="#page-ayat" class="nav-item-custom"><i class="fas fa-book-open"></i><span>Ayat</span></a>
@@ -543,12 +523,10 @@
             once: true
         });
 
-        // VARIABEL GLOBAL MUSIK
         const music = document.getElementById('bg-music');
         const icon = document.getElementById('music-icon');
         let isMusicPlaying = false; 
 
-        // FITUR 2: LOGIKA BACA PARAMETER NAMA TAMU DARI URL KUSTOM
         function checkGuestName() {
             const urlParams = new URLSearchParams(window.location.search);
             const guestName = urlParams.get('to');
@@ -560,7 +538,6 @@
         }
         window.addEventListener('DOMContentLoaded', checkGuestName);
 
-        // FITUR 1: LOGIKA PENUTUPAN BUKA UNDANGAN (COVER LAYER)
         function closeCover() {
             document.getElementById('cover-layer').classList.add('hide');
             document.body.classList.remove('cover-active');
@@ -573,20 +550,17 @@
             });
         }
 
-        // FITUR BARU: AUDIO AUTO-FADE (TUTUP TIRAI MUSIK SAAT MENCAPAI AREA PETA/MAPS)
+        // AUDIO AUTO-FADE
         window.addEventListener('scroll', function() {
             const mapsSection = document.getElementById('maps-section');
             if(!mapsSection || !isMusicPlaying) return;
 
             const rect = mapsSection.getBoundingClientRect();
-            // Cek apakah area peta masuk ke viewport layar tamu
             const isVisible = (rect.top <= window.innerHeight && rect.bottom >= 0);
 
             if (isVisible && !music.paused) {
-                // Perlahan mengecilkan volume tirai musik menjadi 0.1 ketika melihat peta
                 fadeAudio(music, 0.1);
             } else if (!isVisible && !music.paused) {
-                // Mengembalikan volume musik normal penuh 1.0 ketika menjauh dari peta
                 fadeAudio(music, 1.0);
             }
         });
@@ -609,24 +583,23 @@
             }, interval);
         }
 
-        // FITUR BARU: GERAKAN EFEK PARALLAX SCROLLING PADA FOTO MEMPELAI PENGANTIN
+        // PARALLAX SCROLLING PADA FOTO PROFIL MEMPELAI (DIPELAN MENJADI 0.08)
         window.addEventListener('scroll', function() {
-            const speed = 0.4;
+            const speed = 0.08; 
             const imgPria = document.getElementById('img-mempelai-pria');
             const imgWanita = document.getElementById('img-mempelai-wanita');
             
             if(imgPria && imgWanita) {
                 const parentPria = imgPria.parentElement.getBoundingClientRect();
                 if(parentPria.top < window.innerHeight && parentPria.bottom > 0) {
-                    // Geser koordinat gambar secara vertikal mengikuti rasio gulir layar
-                    let yOffset = (window.innerHeight - parentPria.top) * speed - 50;
+                    // Geser koordinat gambar secara vertikal dengan perlahan agar seimbang
+                    let yOffset = (window.innerHeight - parentPria.top) * speed - 20;
                     imgPria.style.transform = `translateY(${yOffset}px)`;
                     imgWanita.style.transform = `translateY(${yOffset}px)`;
                 }
             }
         });
 
-        // FITUR 4: LOGIKA TAMBAH UCAPAN BUKU TAMU DIGITAL
         function addWish() {
             const nameInput = document.getElementById('wishes-name').value.trim();
             const textInput = document.getElementById('wishes-text').value.trim();
@@ -646,7 +619,6 @@
             alert("Terima kasih! Ucapan dan doa restu Anda telah tersimpan.");
         }
 
-        // Logika Render Animasi Kelopak Bunga Jatuh secara acak
         const holder = document.getElementById('petals-holder');
         const petalCount = 25;
         for (let i = 0; i < petalCount; i++) {
