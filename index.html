@@ -8,24 +8,31 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Pustaka Animasi AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        /* 1. FOTO BACKGROUND UTAMA (MENGGUNAKAN FOTO DRIVER 1 ANDA) */
         body { 
             font-family: 'Montserrat', sans-serif; 
-            /* 1. FOTO BACKGROUND SELURUH WEB (Ganti URL di bawah ini dengan foto Anda) */
-            background: linear-gradient(rgba(252, 251, 247, 0.92), rgba(252, 251, 247, 0.92)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000') no-repeat center center fixed;
+            background: linear-gradient(rgba(252, 251, 247, 0.78), rgba(252, 251, 247, 0.78)), 
+                        url('https://lh3.googleusercontent.com/u/0/d/1_BWBy6LvbA44jllcs7bqaLdP3-vrWuSv') no-repeat center center fixed;
             background-size: cover;
-            color: #4a4a4a; 
-            overflow-x: hidden; 
+            color: #2b2b2b; 
         }
         
-        /* 2. FOTO BACKGROUND HALAMAN UTAMA / HERO (Ganti URL di bawah ini dengan foto Prewedding Utama Anda) */
+        /* 2. FOTO BACKGROUND HALAMAN DEPAN / HERO (MENGGUNAKAN FOTO DRIVE 2 ANDA) */
         .hero { 
-            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') no-repeat center center/cover; 
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
+                        url('https://lh3.googleusercontent.com/u/0/d/1Zh7V2Ev0oGgPZarbIXVAzyEnmWJHtPrn') no-repeat center center/cover; 
             height: 100vh; 
             display: flex; 
             align-items: center; 
@@ -34,38 +41,47 @@
             text-align: center; 
         }
         
-        .romantic-font { font-family: 'Great Vibes', cursive; font-size: 4.5rem; color: #d4af37; }
-        .section-padding { padding: 80px 0; }
-        .btn-custom { background-color: #c5a880; color: white; border: none; padding: 10px 25px; border-radius: 30px; transition: 0.3s; text-decoration: none; display: inline-block; }
-        .btn-custom:hover { background-color: #a3875f; color: white; transform: scale(1.05); }
+        .romantic-font { font-family: 'Great Vibes', cursive; font-size: 4.8rem; color: #d4af37; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+        .section-padding { padding: 90px 0; }
         
-        .countdown-box { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; min-width: 80px; transition: 0.3s; }
+        /* TOMBOL ELEGAN DENGAN EFEK TRANSISI EMAS */
+        .btn-custom { background-color: #c5a880; color: white; border: none; padding: 12px 30px; border-radius: 30px; transition: 0.4s ease; text-decoration: none; display: inline-block; font-weight: 500; box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3); }
+        .btn-custom:hover { background-color: #d4af37; color: white; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); }
+        
+        /* KOTAK COUNTDOWN ELEGAN */
+        .countdown-box { background: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; min-width: 85px; color: #2b2b2b; transition: 0.3s; }
         .countdown-box:hover { transform: translateY(-5px); }
-        .countdown-box span { font-size: 2rem; font-weight: 600; display: block; color: #c5a880; }
+        .countdown-box span { font-size: 2.2rem; font-weight: 600; display: block; color: #d4af37; }
         
-        .audio-control { position: fixed; bottom: 20px; right: 20px; z-index: 999; background: #c5a880; color: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: 0.3s; }
+        /* TOMBOL PENGATUR MUSIK ELEGAN */
+        .audio-control { position: fixed; bottom: 20px; right: 20px; z-index: 999; background: #d4af37; color: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.25); transition: 0.3s; }
         .audio-control:hover { transform: scale(1.1); }
         
-        /* Modifikasi Transparansi Kontainer agar Foto Latar Belakang Terlihat Elegan */
-        .bg-glass { background: rgba(255, 255, 255, 0.65) !important; backdrop-filter: blur(3px); }
-        .card { background: rgba(255, 255, 255, 0.85) !important; backdrop-filter: blur(5px); }
+        /* EFEK LAPISAN KACA PREMIUM (GLASSMORPHISM) */
+        .glass-panel { 
+            background: rgba(255, 255, 255, 0.82) !important; 
+            backdrop-filter: blur(12px) !important; 
+            -webkit-backdrop-filter: blur(12px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
+            padding: 40px 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+        }
         
-        /* Gaya Timeline Kisah Cinta */
+        /* GAYA TIMELINE KISAH CINTA ELEGAN */
         .timeline { position: relative; max-width: 800px; margin: 0 auto; padding: 20px 0; }
-        .timeline::after { content: ''; position: absolute; width: 2px; background-color: #c5a880; top: 0; bottom: 0; left: 50%; margin-left: -1px; }
+        .timeline::after { content: ''; position: absolute; width: 2px; background-color: #d4af37; top: 0; bottom: 0; left: 50%; margin-left: -1px; }
         .timeline-container { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
-        .timeline-container::after { content: ' '; position: absolute; width: 16px; height: 16px; right: -8px; background-color: #fcfbf7; border: 4px solid #c5a880; top: 15px; border-radius: 50%; z-index: 1; }
+        .timeline-container::after { content: ' '; position: absolute; width: 16px; height: 16px; right: -8px; background-color: #fcfbf7; border: 4px solid #d4af37; top: 25px; border-radius: 50%; z-index: 1; }
         .left { left: 0; text-align: right; }
         .right { left: 50%; text-align: left; }
         .left::after { right: -8px; }
         .right::after { left: -8px; }
-        .timeline-content { padding: 20px; background-color: rgba(255, 255, 255, 0.85); position: relative; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; backdrop-filter: blur(5px); }
-        .timeline-content:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
         
-        /* Animasi Efek Hover untuk Foto Galeri */
-        .gallery-img { width: 100%; height: 250px; object-fit: cover; transition: 0.5s ease; }
-        .gallery-box { overflow: hidden; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .gallery-box:hover .gallery-img { transform: scale(1.1); }
+        /* ALBUM FOTO PREWEDDING EFEK HOVER ZOOM PENGANTIN */
+        .gallery-img { width: 100%; height: 260px; object-fit: cover; transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+        .gallery-box { overflow: hidden; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); border: 3px solid rgba(255, 255, 255, 0.8); }
+        .gallery-box:hover .gallery-img { transform: scale(1.08); }
 
         @media screen and (max-width: 600px) {
             .timeline::after { left: 31px; }
@@ -73,6 +89,7 @@
             .timeline-container::after { left: 23px; }
             .right { left: 0%; }
             .left { left: 0%; }
+            .romantic-font { font-size: 3.8rem; }
         }
     </style>
 </head>
@@ -87,9 +104,9 @@
     <!-- 1. Halaman Utama / Hero -->
     <section class="hero">
         <div class="container">
-            <h5 class="text-uppercase tracking-wide mb-3" data-aos="fade-down" data-aos-duration="1000">Walimatul 'Ursy</h5>
+            <h5 class="text-uppercase tracking-wide mb-3" data-aos="fade-down" data-aos-duration="1000" style="letter-spacing: 4px;">Walimatul 'Ursy</h5>
             <h1 class="romantic-font my-4" data-aos="zoom-in" data-aos-duration="1500">Ruslan & Nuraeni</h1>
-            <p class="lead mb-4" data-aos="fade-up" data-aos-duration="1200">Kami mengundang Anda untuk merayakan kebahagiaan kami</p>
+            <p class="lead mb-4" data-aos="fade-up" data-aos-duration="1200" style="font-weight: 300;">Kami mengundang Anda untuk merayakan kebahagiaan kami</p>
             <div class="d-flex justify-content-center gap-3 my-4" data-aos="fade-up" data-aos-duration="1400">
                 <div class="countdown-box"><span id="days">00</span>Hari</div>
                 <div class="countdown-box"><span id="hours">00</span>Jam</div>
@@ -102,80 +119,82 @@
 
     <!-- 2. Profil Mempelai -->
     <section class="section-padding text-center container">
-        <h2 class="romantic-font mb-5" style="font-size: 3.5rem;" data-aos="fade-up">Mempelai Bersanding</h2>
-        <div class="row align-items-center">
-            <!-- Pria -->
-            <div class="col-md-5" data-aos="fade-right" data-aos-duration="1200">
-                <img src="https://images.unsplash.com/photo-1621616875450-79f22448040e?q=80&w=500" class="img-fluid rounded-circle mb-3 shadow" style="width: 200px; height: 200px; object-fit: cover;" alt="Pria">
-                <h3>Ruslan Hasanudin, S. Ak</h3>
-                <p class="text-muted">Putra dari Bapak Saripudin & Ibu Epong Nurbaetin</p>
-            </div>
-            <!-- Pembatas & -->
-            <div class="col-md-2 my-4" data-aos="zoom-in" data-aos-duration="1000">
-                <h1 class="romantic-font">&</h1>
-            </div>
-            <!-- Wanita -->
-            <div class="col-md-5" data-aos="fade-left" data-aos-duration="1200">
-                <img src="https://images.unsplash.com/photo-1594744803329-e58b31de215f?q=80&w=500" class="img-fluid rounded-circle mb-3 shadow" style="width: 200px; height: 200px; object-fit: cover;" alt="Wanita">
-                <h3>Nuraeni, S. M</h3>
-                <p class="text-muted">Putri dari Bapak Sirod & Ibu Lilis</p>
+        <div class="glass-panel mx-auto" style="max-width: 950px;" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="romantic-font mb-5" style="font-size: 3.5rem;">Mempelai Bersanding</h2>
+            <div class="row align-items-center">
+                <!-- Pria -->
+                <div class="col-md-5" data-aos="fade-right" data-aos-delay="200">
+                    <!-- Menggunakan Foto Drive 3 Anda sebagai Foto Profil Utama Bersama -->
+                    <img src="https://lh3.googleusercontent.com/u/0/d/1iNdTKBzkdgmp7VJD64SkSFduQyZWP_Hs" class="img-fluid rounded-circle mb-3 shadow" style="width: 190px; height: 190px; object-fit: cover; border: 4px solid #d4af37;" alt="Ruslan">
+                    <h3 style="font-weight: 600; color: #1a1a1a; font-size: 1.4rem;">Ruslan Hasanudin, S. Ak</h3>
+                    <p class="text-muted small mt-2">Putra dari Bapak Saripudin<br>& Ibu Epong Nurbaetin</p>
+                </div>
+                <!-- Pembatas & -->
+                <div class="col-md-2 my-4" data-aos="zoom-in" data-aos-delay="400">
+                    <h1 class="romantic-font" style="font-size: 4rem;">&</h1>
+                </div>
+                <!-- Wanita -->
+                <div class="col-md-5" data-aos="fade-left" data-aos-delay="200">
+                    <!-- Menggunakan Foto Drive 3 Anda sebagai Foto Profil Utama Bersama -->
+                    <img src="https://lh3.googleusercontent.com/u/0/d/1iNdTKBzkdgmp7VJD64SkSFduQyZWP_Hs" class="img-fluid rounded-circle mb-3 shadow" style="width: 190px; height: 190px; object-fit: cover; border: 4px solid #d4af37;" alt="Nuraeni">
+                    <h3 style="font-weight: 600; color: #1a1a1a; font-size: 1.4rem;">Nuraeni, S. M</h3>
+                    <p class="text-muted small mt-2">Putri dari Bapak Sirod<br>& Ibu Lilis</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Section Galeri Foto Tambahan -->
-    <section class="section-padding text-center bg-glass">
-        <div class="container">
-            <h2 class="romantic-font mb-4" style="font-size: 3.5rem;" data-aos="fade-up">Galeri Prewedding</h2>
-            <p class="text-muted mb-5" data-aos="fade-up">Momen indah kebersamaan kami</p>
+    <section class="section-padding text-center container">
+        <div class="glass-panel mx-auto" style="max-width: 950px;" data-aos="fade-up">
+            <h2 class="romantic-font mb-4" style="font-size: 3.5rem;">Galeri Prewedding</h2>
+            <p class="text-muted mb-5">Momen indah kebersamaan kami</p>
             
             <div class="row g-3 justify-content-center">
+                <!-- Menampilkan semua kombinasi foto asli Anda secara rapi di galeri album -->
                 <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="gallery-box"><img src="https://images.unsplash.com/photo-1519741497674-611481863552" class="gallery-img" alt="Foto 1"></div>
+                    <div class="gallery-box"><img src="https://lh3.googleusercontent.com/u/0/d/1_BWBy6LvbA44jllcs7bqaLdP3-vrWuSv" class="gallery-img" alt="Foto 1"></div>
                 </div>
                 <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="gallery-box"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc" class="gallery-img" alt="Foto 2"></div>
+                    <div class="gallery-box"><img src="https://lh3.googleusercontent.com/u/0/d/1Zh7V2Ev0oGgPZarbIXVAzyEnmWJHtPrn" class="gallery-img" alt="Foto 2"></div>
                 </div>
                 <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="gallery-box"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a" class="gallery-img" alt="Foto 3"></div>
-                </div>
-                <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="gallery-box"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" class="gallery-img" alt="Foto 4"></div>
+                    <div class="gallery-box"><img src="https://lh3.googleusercontent.com/u/0/d/1iNdTKBzkdgmp7VJD64SkSFduQyZWP_Hs" class="gallery-img" alt="Foto 3"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 3. Kisah Cinta (Love Journey) -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
+    <section class="section-padding container">
+        <div class="glass-panel mx-auto" style="max-width: 950px;" data-aos="fade-up">
+            <div class="text-center mb-5">
                 <h2 class="romantic-font" style="font-size: 3.5rem;">Kisah Cinta Kami</h2>
                 <p class="text-muted">Bagaimana perjalanan cinta kami bermula hingga bersanding di pelaminan</p>
             </div>
             <div class="timeline">
                 <div class="timeline-container left" data-aos="fade-right">
-                    <div class="timeline-content">
-                        <h4 class="h5" style="color: #c5a880;">Pertama Bertemu (2023)</h4>
-                        <p class="mb-0 text-muted">Awal mula takdir mempertemukan kami di sebuah acara. Pandangan pertama yang menjadi awal diskusi panjang dan kedekatan kami.</p>
+                    <div class="glass-panel p-3 text-start timeline-content">
+                        <h4 class="h6 fw-bold" style="color: #d4af37;">Pertama Bertemu (2023)</h4>
+                        <p class="mb-0 text-muted small">Awal mula takdir mempertemukan kami di sebuah acara. Pandangan pertama yang menjadi awal diskusi panjang dan kedekatan kami.</p>
                     </div>
                 </div>
                 <div class="timeline-container right" data-aos="fade-left">
-                    <div class="timeline-content">
-                        <h4 class="h5" style="color: #c5a880;">Menjalin Komitmen (2024)</h4>
-                        <p class="mb-0 text-muted">Setelah saling mengenal lebih dalam, kami memutuskan untuk berkomitmen serius dan saling mendukung impian satu sama lain.</p>
+                    <div class="glass-panel p-3 text-start timeline-content">
+                        <h4 class="h6 fw-bold" style="color: #d4af37;">Menjalin Komitmen (2024)</h4>
+                        <p class="mb-0 text-muted small">Setelah saling mengenal lebih dalam, kami memutuskan untuk berkomitmen serius dan saling mendukung impian satu sama lain.</p>
                     </div>
                 </div>
                 <div class="timeline-container left" data-aos="fade-right">
-                    <div class="timeline-content">
-                        <h4 class="h5" style="color: #c5a880;">Hari Lamaran (Early 2026)</h4>
-                        <p class="mb-0 text-muted">Di hadapan kedua keluarga besar, kami mengikat janji suci secara resmi dalam acara lamaran penuh haru dan bahagia.</p>
+                    <div class="glass-panel p-3 text-start timeline-content">
+                        <h4 class="h6 fw-bold" style="color: #d4af37;">Hari Lamaran (Early 2026)</h4>
+                        <p class="mb-0 text-muted small">Di hadapan kedua keluarga besar, kami mengikat janji suci secara resmi dalam acara lamaran penuh haru dan bahagia.</p>
                     </div>
                 </div>
                 <div class="timeline-container right" data-aos="fade-left">
-                    <div class="timeline-content">
-                        <h4 class="h5" style="color: #c5a880;">Menikah (Desember 2026)</h4>
-                        <p class="mb-0 text-muted">Hari baru dan lembaran baru kehidupan kami dimulai. Kami mengikrarkan janji setia seumur hidup dalam ikatan pernikahan.</p>
+                    <div class="glass-panel p-3 text-start timeline-content">
+                        <h4 class="h6 fw-bold" style="color: #d4af37;">Menikah (Desember 2026)</h4>
+                        <p class="mb-0 text-muted small">Hari baru dan lembaran baru kehidupan kami dimulai. Kami mengikrarkan janji setia seumur hidup dalam ikatan pernikahan.</p>
                     </div>
                 </div>
             </div>
@@ -183,58 +202,61 @@
     </section>
 
     <!-- 4. Detail Acara & Peta -->
-    <section class="section-padding text-center bg-glass">
-        <div class="container">
-            <h2 class="romantic-font mb-5" style="font-size: 3.5rem;" data-aos="fade-up">Waktu & Tempat Acara</h2>
+    <section class="section-padding text-center container">
+        <div class="glass-panel mx-auto" style="max-width: 950px;" data-aos="fade-up">
+            <h2 class="romantic-font mb-5" style="font-size: 3.5rem;">Waktu & Tempat Acara</h2>
             <div class="row g-4 justify-content-center">
-                <div class="col-md-5" data-aos="zoom-in-right" data-aos-duration="1200">
-                    <div class="card border-0 shadow-sm p-4 h-100">
-                        <i class="fas fa-ring fa-3x mb-3 text-muted"></i>
-                        <h4>Akad Nikah / Pemberkatan</h4>
-                        <p class="mt-2"><strong>Minggu, 26 Desember 2026</strong><br>Pukul 08.00 - 10.00 WIB</p>
-                        <p class="text-muted">Gedung / Rumah Pernikahan<br>Purwakarta, Jawa Barat</p>
+                <div class="col-md-6" data-aos="zoom-in-right" data-aos-duration="1000">
+                    <div class="card border-0 shadow-sm p-4 h-100 bg-white">
+                        <i class="fas fa-ring fa-3x mb-3" style="color: #c5a880;"></i>
+                        <h4 style="font-weight: 600;">Akad Nikah</h4>
+                        <p class="mt-2 mb-1"><strong>Minggu, 26 Desember 2026</strong></p>
+                        <p class="mb-2">Pukul 08.00 - 10.00 WIB</p>
+                        <p class="text-muted small">Gedung / Rumah Pernikahan<br>Purwakarta, Jawa Barat</p>
                     </div>
                 </div>
-                <div class="col-md-5" data-aos="zoom-in-left" data-aos-duration="1200">
-                    <div class="card border-0 shadow-sm p-4 h-100">
-                        <i class="fas fa-utensils fa-3x mb-3 text-muted"></i>
-                        <h4>Resepsi Pernikahan</h4>
-                        <p class="mt-2"><strong>Minggu, 26 Desember 2026</strong><br>Pukul 11.00 - selesai</p>
-                        <p class="text-muted">Gedung / Rumah Pernikahan<br>Purwakarta, Jawa Barat</p>
+                <div class="col-md-6" data-aos="zoom-in-left" data-aos-duration="1000">
+                    <div class="card border-0 shadow-sm p-4 h-100 bg-white">
+                        <i class="fas fa-utensils fa-3x mb-3" style="color: #c5a880;"></i>
+                        <h4 style="font-weight: 600;">Resepsi Pernikahan</h4>
+                        <p class="mt-2 mb-1"><strong>Minggu, 26 Desember 2026</strong></p>
+                        <p class="mb-2">Pukul 11.00 - selesai</p>
+                        <p class="text-muted small">Gedung / Rumah Pernikahan<br>Purwakarta, Jawa Barat</p>
                     </div>
                 </div>
             </div>
             
-            <div class="mt-5 shadow rounded overflow-hidden mx-auto" style="max-width: 800px;" data-aos="fade-up">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.6337227003444!2d107.4589209!3d-6.5678434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e690e72bd58cf7b%3A0xe6bf624deee409ef!2sKlinik%20Aqma%20Purwakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <!-- Elemen Peta Google Maps Klinik Aqma Purwakarta -->
+            <div class="mt-5 shadow-sm rounded overflow-hidden mx-auto border" style="max-width: 850px;" data-aos="fade-up">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.6337227003444!2d107.4589209!3d-6.5678434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e690e72bd58cf7b%3A0xe6bf624deee409ef!2sKlinik%20Aqma%20Purwakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <div class="mt-3" data-aos="fade-up">
+            <div class="mt-4" data-aos="fade-up">
                 <a href="https://maps.app.goo.gl/w8BnHsmBa4orZGGd9?g_st=ac" target="_blank" class="btn btn-custom btn-sm"><i class="fas fa-map-marker-alt me-2"></i>Buka di Aplikasi Google Maps</a>
             </div>
         </div>
     </section>
 
     <!-- 5. Fitur Amplop Digital / Wedding Gift -->
-    <section class="section-padding text-center">
-        <div class="container" style="max-width: 700px;">
-            <h2 class="romantic-font mb-4" style="font-size: 3.5rem;" data-aos="fade-up">Dompet Digital / Kado Digital</h2>
-            <p class="text-muted mb-5" data-aos="fade-up">Doa restu Anda adalah karunia terindah. Namun jika ingin memberikan tanda kasih, Anda dapat mengirimkannya melalui rekening berikut:</p>
+    <section class="section-padding text-center container">
+        <div class="glass-panel mx-auto" style="max-width: 950px;" data-aos="fade-up">
+            <h2 class="romantic-font mb-4" style="font-size: 3.5rem;">Dompet Digital / Kado Digital</h2>
+            <p class="text-muted mb-5">Doa restu Anda adalah karunia terindah. Namun jika ingin memberikan tanda kasih, Anda dapat mengirimkannya melalui rekening berikut:</p>
             
-            <div class="row g-3 justify-content-center" data-aos="fade-up" data-aos-duration="1200">
-                <div class="col-md-6">
-                    <div class="card border-0 shadow-sm p-4 text-center">
-                        <i class="fas fa-credit-card fa-2x mb-2 text-muted"></i>
-                        <h5>Bank BCA</h5>
-                        <p class="mb-1 fw-bold" id="norek1">1234567890</p>
+            <div class="row g-3 justify-content-center" data-aos="fade-up">
+                <div class="col-md-5">
+                    <div class="card border-0 shadow-sm p-4 text-center bg-white">
+                        <i class="fas fa-credit-card fa-2x mb-2" style="color: #c5a880;"></i>
+                        <h5 style="font-weight:600;">Bank BCA</h5>
+                        <p class="mb-1 fw-bold fs-5" id="norek1" style="color: #1a1a1a;">1234567890</p>
                         <p class="small text-muted mb-3">a.n. Ruslan Hasanudin</p>
                         <button class="btn btn-sm btn-outline-secondary rounded-pill" onclick="copyText('norek1')">Salin No. Rekening</button>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card border-0 shadow-sm p-4 text-center">
-                        <i class="fas fa-wallet fa-2x mb-2 text-muted"></i>
-                        <h5>Bank Mandiri</h5>
-                        <p class="mb-1 fw-bold" id="norek2">0987654321</p>
+                <div class="col-md-5">
+                    <div class="card border-0 shadow-sm p-4 text-center bg-white">
+                        <i class="fas fa-wallet fa-2x mb-2" style="color: #c5a880;"></i>
+                        <h5 style="font-weight:600;">Bank Mandiri</h5>
+                        <p class="mb-1 fw-bold fs-5" id="norek2" style="color: #1a1a1a;">0987654321</p>
                         <p class="small text-muted mb-3">a.n. Nuraeni</p>
                         <button class="btn btn-sm btn-outline-secondary rounded-pill" onclick="copyText('norek2')">Salin No. Rekening</button>
                     </div>
@@ -244,29 +266,29 @@
     </section>
 
     <!-- 6. RSVP Konfirmasi Kehadiran -->
-    <section class="section-padding text-center container" style="max-width: 600px;" data-aos="zoom-in">
-        <div class="p-4 rounded shadow-sm bg-glass">
+    <section class="section-padding text-center container" style="max-width: 700px;" data-aos="zoom-in">
+        <div class="glass-panel">
             <h2 class="romantic-font mb-4" style="font-size: 3.5rem;">Konfirmasi Kehadiran</h2>
             <p class="mb-4 text-muted">Bantu kami mempersiapkan jamuan terbaik dengan mengonfirmasi kehadiran Anda.</p>
             <form id="rsvp-form">
                 <div class="mb-3">
-                    <input type="text" id="guest-name" class="form-control" placeholder="Nama Anda" required>
+                    <input type="text" id="guest-name" class="form-control" placeholder="Nama Anda" style="border-radius:8px; padding:12px;" required>
                 </div>
                 <div class="mb-3">
-                    <select id="attendance" class="form-select" required>
+                    <select id="attendance" class="form-select" style="border-radius:8px; padding:12px;" required>
                         <option value="">Apakah Anda akan hadir?</option>
                         <option value="Hadir">Ya, Saya Akan Hadir</option>
                         <option value="Tidak Hadir">Maaf, Saya Tidak Bisa Hadir</option>
                     </select>
                 </div>
-                <button type="button" class="btn btn-custom w-100" onclick="sendRSVP()">Kirim via WhatsApp</button>
+                <button type="button" class="btn btn-custom w-100 py-3" style="border-radius:8px;" onclick="sendRSVP()">Kirim via WhatsApp</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
-        <p class="mb-0">&copy; 2026 Ruslan & Nuraeni. All Rights Reserved.</p>
+    <footer class="bg-dark text-white-50 text-center py-4">
+        <p class="mb-0 small">&copy; 2026 Ruslan & Nuraeni. All Rights Reserved.</p>
     </footer>
 
     <!-- JavaScript & Pustaka Pendukung -->
@@ -308,38 +330,4 @@
             const d = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
             const h = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const m = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = d < 10 ? "0" + d : d;
-            document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
-            document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
-            document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
-        }, 1000);
-
-        function copyText(elementId) {
-            const textToCopy = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                alert("Nomor rekening berhasil disalin: " + textToCopy);
-            }).catch(err => {
-                console.error('Gagal menyalin teks: ', err);
-            });
-        }
-
-        function sendRSVP() {
-            const name = document.getElementById('guest-name').value;
-            const status = document.getElementById('attendance').value;
-            const phoneNumber = "6285805611643";
-
-            if(!name || !status) {
-                alert("Mohon isi nama dan konfirmasi kehadiran Anda.");
-                return;
-            }
-
-            const message = `Halo, saya ${name}. Ingin mengonfirmasi bahwa saya *${status}* di acara pernikahan kalian. Terima kasih!`;
-            const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
-            window.open(whatsappURL, '_blank');
-        }
-    </script>
-</body>
-</html>
-
+            const s = Math.f
